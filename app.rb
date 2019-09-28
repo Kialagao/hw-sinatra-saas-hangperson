@@ -56,8 +56,8 @@ class HangpersonApp < Sinatra::Base
   # wrong_guesses and word_with_guesses from @game.
   get '/show' do
     ### YOUR CODE HERE ###
-    @wrong_guesses = game.wrong_guesses
-    @word_with_guesses = game.word_with_guesses
+    @wrong_guesses = @game.wrong_guesses
+    @word_with_guesses = @game.word_with_guesses
     case @game.check_win_or_lose
     when :win
       redirect '/win'
