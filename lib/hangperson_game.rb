@@ -18,9 +18,8 @@ class HangpersonGame
   end
 
   def guess(letter) 
-    if (letter == nil || letter.size > 1 || letter.size < 1 || !letter.match(/^[[:alpha:]]$/))
-      raise ArgumentError
-    end
+    raise ArgumentError if (letter == nil || letter.size != 1 || !letter.match(/^[[:alpha:]]$/))
+    
     letter.downcase!
     if (word.include? letter) 
       if guesses.include? letter
